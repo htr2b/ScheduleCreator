@@ -1,0 +1,1 @@
+Dosya boyutu çok büyük olduğu için Node Module dosyasını silmek zorunda kaldım. Projeyi başlatmadan önce dosya dizininde "npm install" yazmanız gerekiyor.

@@ -1,0 +1,2 @@
+<button mat-flat-button color="{{buttonColor}}" (click)="fileInput.click()">{{buttonText}}</button>
+<input type="file" #fileInput style="display: none;" (change)="onFileSelected($event)" accept=".csv">

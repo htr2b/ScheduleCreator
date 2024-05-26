@@ -1,0 +1,340 @@
+<div class = "container">
+  <button type="button" class="text-white bg-gradient-to-br from-purple-600 to-blue-500 hover:bg-gradient-to-bl focus:ring-4 focus:outline-none focus:ring-blue-300 dark:focus:ring-blue-800 font-medium rounded-lg text-sm px-5 py-2.5 text-center me-2 mb-2" (click) = "prepareTable()">Create Schedule</button>
+  <button type="button" class="text-white bg-gradient-to-br from-purple-600 to-blue-500 hover:bg-gradient-to-bl focus:ring-4 focus:outline-none focus:ring-blue-300 dark:focus:ring-blue-800 font-medium rounded-lg text-sm px-5 py-2.5 text-center me-2 mb-2" (click)="makeTable()">Print Schedule</button>
+  </div>
+
+  <section class="py-1 bg-blueGray-50">
+      <div class="w-full  mb-12 xl:mb-0 px-4 mx-auto mt-24">
+        <div class="relative flex flex-col min-w-0 break-words bg-white w-full mb-6 shadow-lg rounded ">
+        <div class="rounded-t mb-0 px-4 py-3 border-0 bg-[#0ea5e9]">
+        <div  class="flex flex-wrap items-center">
+          <div class="relative w-full px-4 max-w-full flex-grow flex-1">
+            <h3 class="font-semibold text-base text-blueGray-700 flex justify-center items-center">First Year</h3>
+          </div>
+
+        </div>
+      </div>
+
+      <div class="block w-full overflow-x-auto">
+        <table class="items-center bg-transparent w-full border-collapse ">
+          <thead class="bg-[#38bdf8]">
+            <tr>
+              <th class=" flex justify-center items-center px-6 bg-blueGray-50 text-blueGray-500 align-middle border border-solid border-blueGray-100 py-3 text-xs uppercase border-l-0 border-r-0 whitespace-nowrap font-semibold text-left">
+                      Lessons / Times    </th>
+            <th class="px-6 bg-blueGray-50 text-blueGray-500 align-middle border border-solid border-blueGray-100 py-3 text-xs uppercase border-l-0 border-r-0 whitespace-nowrap font-semibold text-left">
+                8.30-9.20
+                            </th>
+             <th class="px-6 bg-blueGray-50 text-blueGray-500 align-middle border border-solid border-blueGray-100 py-3 text-xs uppercase border-l-0 border-r-0 whitespace-nowrap font-semibold text-left">
+                9.30-10.20
+                          </th>
+             <th class="px-6 bg-blueGray-50 text-blueGray-500 align-middle border border-solid border-blueGray-100 py-3 text-xs uppercase border-l-0 border-r-0 whitespace-nowrap font-semibold text-left">
+                            10.30-11.20
+              </th>
+            <th class="px-6 bg-blueGray-50 text-blueGray-500 align-middle border border-solid border-blueGray-100 py-3 text-xs uppercase border-l-0 border-r-0 whitespace-nowrap font-semibold text-left">
+                11.30-12.20
+                          </th>
+               <th class="px-6 bg-blueGray-50 text-blueGray-500 align-middle border border-solid border-blueGray-100 py-3 text-xs uppercase border-l-0 border-r-0 whitespace-nowrap font-semibold text-left">
+                12.30-13.20
+                          </th>
+            <th class="px-6 bg-blueGray-50 text-blueGray-500 align-middle border border-solid border-blueGray-100 py-3 text-xs uppercase border-l-0 border-r-0 whitespace-nowrap font-semibold text-left">
+                13.30-14.20
+                          </th>
+             <th class="px-6 bg-blueGray-50 text-blueGray-500 align-middle border border-solid border-blueGray-100 py-3 text-xs uppercase border-l-0 border-r-0 whitespace-nowrap font-semibold text-left">
+                14.30-15.20
+                          </th>
+                <th class="px-6 bg-blueGray-50 text-blueGray-500 align-middle border border-solid border-blueGray-100 py-3 text-xs uppercase border-l-0 border-r-0 whitespace-nowrap font-semibold text-left">
+                            15.30-16.20
+              </th>
+
+            </tr>
+          </thead>
+
+          <tbody>
+            <tr>
+              <th class="flex justify-center items-center bg-[#0ea5e9] px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4 text-left text-blueGray-700 ">
+                Monday
+              </th>
+                <td class="border-t-0 px-6 align-middle bg-[#0ea5e9] border-l-0 border-r-0 text-xs whitespace-nowrap p-4" *ngFor="let lesson of mondayLessons">  {{ lesson ? lesson : 'free' }}</td>
+            </tr>
+            <tr>
+              <th class="flex justify-center items-center border-t-0 bg-[#38bdf8] px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4 text-left text-blueGray-700">
+                Tuesday
+              </th>
+              <td class="border-t-0 px-6 align-middle border-l-0 border-r-0 bg-[#38bdf8] text-xs whitespace-nowrap p-4" *ngFor="let lesson of tuesdayLessons">  {{ lesson ? lesson : 'free' }}</td>
+            </tr>
+            <tr>
+              <th class="flex justify-center items-center bg-[#0ea5e9]  border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4 text-left text-blueGray-700">
+                Wednesday
+              </th>
+              <td class="border-t-0 px-6 align-middle bg-[#0ea5e9]  border-l-0 border-r-0 text-xs whitespace-nowrap p-4" *ngFor="let lesson of wednesdayLessons">  {{ lesson ? lesson : 'free' }}</td>
+
+            </tr>
+            <tr>
+              <th class="flex justify-center items-center border-t-0 bg-[#38bdf8] px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4 text-left text-blueGray-700">
+                Thursday
+              </th>
+              <td class="border-t-0 px-6 align-middle border-l-0 border-r-0 bg-[#38bdf8] text-xs whitespace-nowrap p-4" *ngFor="let lesson of thursdayLessons">  {{ lesson ? lesson : 'free' }}</td>
+            </tr>
+            <tr>
+              <th class="flex justify-center items-center bg-[#0ea5e9]  border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4 text-left text-blueGray-700">
+                Friday
+              </th>
+              <td class="border-t-0 px-6 align-middle border-l-0 bg-[#0ea5e9]  border-r-0 text-xs whitespace-nowrap p-4" *ngFor="let lesson of fridayLessons">  {{ lesson ? lesson : 'free' }}</td>
+            </tr>
+          </tbody>
+
+        </table>
+      </div>
+    </div>
+  </div>
+  <div class="w-full  mb-12 xl:mb-0 px-4 mx-auto mt-24">
+    <div class="relative flex flex-col min-w-0 break-words bg-white w-full mb-6 shadow-lg rounded ">
+      <div class="rounded-t mb-0 px-4 py-3 border-0 bg-[#0ea5e9]">
+        <div  class="flex flex-wrap items-center">
+          <div class="relative w-full px-4 max-w-full flex-grow flex-1">
+            <h3 class="font-semibold text-base text-blueGray-700 flex justify-center items-center">Second Year</h3>
+          </div>
+
+        </div>
+      </div>
+
+      <div class="block w-full overflow-x-auto">
+        <table class="items-center bg-transparent w-full border-collapse ">
+          <thead class="bg-[#38bdf8]">
+            <tr>
+              <th class=" flex justify-center items-center px-6 bg-blueGray-50 text-blueGray-500 align-middle border border-solid border-blueGray-100 py-3 text-xs uppercase border-l-0 border-r-0 whitespace-nowrap font-semibold text-left">
+                      Lessons / Times    </th>
+            <th class="px-6 bg-blueGray-50 text-blueGray-500 align-middle border border-solid border-blueGray-100 py-3 text-xs uppercase border-l-0 border-r-0 whitespace-nowrap font-semibold text-left">
+                8.30-9.20
+                            </th>
+             <th class="px-6 bg-blueGray-50 text-blueGray-500 align-middle border border-solid border-blueGray-100 py-3 text-xs uppercase border-l-0 border-r-0 whitespace-nowrap font-semibold text-left">
+                9.30-10.20
+                          </th>
+             <th class="px-6 bg-blueGray-50 text-blueGray-500 align-middle border border-solid border-blueGray-100 py-3 text-xs uppercase border-l-0 border-r-0 whitespace-nowrap font-semibold text-left">
+                            10.30-11.20
+              </th>
+            <th class="px-6 bg-blueGray-50 text-blueGray-500 align-middle border border-solid border-blueGray-100 py-3 text-xs uppercase border-l-0 border-r-0 whitespace-nowrap font-semibold text-left">
+                11.30-12.20
+                          </th>
+               <th class="px-6 bg-blueGray-50 text-blueGray-500 align-middle border border-solid border-blueGray-100 py-3 text-xs uppercase border-l-0 border-r-0 whitespace-nowrap font-semibold text-left">
+                12.30-13.20
+                          </th>
+            <th class="px-6 bg-blueGray-50 text-blueGray-500 align-middle border border-solid border-blueGray-100 py-3 text-xs uppercase border-l-0 border-r-0 whitespace-nowrap font-semibold text-left">
+                13.30-14.20
+                          </th>
+             <th class="px-6 bg-blueGray-50 text-blueGray-500 align-middle border border-solid border-blueGray-100 py-3 text-xs uppercase border-l-0 border-r-0 whitespace-nowrap font-semibold text-left">
+                14.30-15.20
+                          </th>
+                <th class="px-6 bg-blueGray-50 text-blueGray-500 align-middle border border-solid border-blueGray-100 py-3 text-xs uppercase border-l-0 border-r-0 whitespace-nowrap font-semibold text-left">
+                            15.30-16.20
+              </th>
+
+            </tr>
+          </thead>
+
+          <tbody>
+            <tr>
+              <th class="flex justify-center items-center bg-[#0ea5e9] px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4 text-left text-blueGray-700 ">
+                Monday
+              </th>
+                <td class="border-t-0 px-6 align-middle bg-[#0ea5e9] border-l-0 border-r-0 text-xs whitespace-nowrap p-4" *ngFor="let lesson of mondayLessons2">  {{ lesson ? lesson : 'free' }}</td>
+            </tr>
+            <tr>
+              <th class="flex justify-center items-center border-t-0 bg-[#38bdf8] px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4 text-left text-blueGray-700">
+                Tuesday
+              </th>
+              <td class="border-t-0 px-6 align-middle border-l-0 border-r-0 bg-[#38bdf8] text-xs whitespace-nowrap p-4" *ngFor="let lesson of tuesdayLessons2">  {{ lesson ? lesson : 'free' }}</td>
+            </tr>
+            <tr>
+              <th class="flex justify-center items-center bg-[#0ea5e9]  border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4 text-left text-blueGray-700">
+                Wednesday
+              </th>
+              <td class="border-t-0 px-6 align-middle bg-[#0ea5e9]  border-l-0 border-r-0 text-xs whitespace-nowrap p-4" *ngFor="let lesson of wednesdayLessons2">  {{ lesson ? lesson : 'free' }}</td>
+
+            </tr>
+            <tr>
+              <th class="flex justify-center items-center border-t-0 bg-[#38bdf8] px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4 text-left text-blueGray-700">
+                Thursday
+              </th>
+              <td class="border-t-0 px-6 align-middle border-l-0 border-r-0 bg-[#38bdf8] text-xs whitespace-nowrap p-4" *ngFor="let lesson of thursdayLessons2">  {{ lesson ? lesson : 'free' }}</td>
+            </tr>
+            <tr>
+              <th class="flex justify-center items-center bg-[#0ea5e9]  border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4 text-left text-blueGray-700">
+                Friday
+              </th>
+              <td class="border-t-0 px-6 align-middle border-l-0 bg-[#0ea5e9]  border-r-0 text-xs whitespace-nowrap p-4" *ngFor="let lesson of fridayLessons2">  {{ lesson ? lesson : 'free' }}</td>
+            </tr>
+          </tbody>
+
+        </table>
+      </div>
+    </div>
+  </div>
+  <div class="w-full  mb-12 xl:mb-0 px-4 mx-auto mt-24">
+    <div class="relative flex flex-col min-w-0 break-words bg-white w-full mb-6 shadow-lg rounded ">
+      <div class="rounded-t mb-0 px-4 py-3 border-0 bg-[#0ea5e9]">
+        <div  class="flex flex-wrap items-center">
+          <div class="relative w-full px-4 max-w-full flex-grow flex-1">
+            <h3 class="font-semibold text-base text-blueGray-700 flex justify-center items-center">Third Year</h3>
+          </div>
+
+        </div>
+      </div>
+
+      <div class="block w-full overflow-x-auto">
+        <table class="items-center bg-transparent w-full border-collapse ">
+          <thead class="bg-[#38bdf8]">
+            <tr>
+              <th class=" flex justify-center items-center px-6 bg-blueGray-50 text-blueGray-500 align-middle border border-solid border-blueGray-100 py-3 text-xs uppercase border-l-0 border-r-0 whitespace-nowrap font-semibold text-left">
+                      Lessons / Times    </th>
+            <th class="px-6 bg-blueGray-50 text-blueGray-500 align-middle border border-solid border-blueGray-100 py-3 text-xs uppercase border-l-0 border-r-0 whitespace-nowrap font-semibold text-left">
+                8.30-9.20
+                            </th>
+             <th class="px-6 bg-blueGray-50 text-blueGray-500 align-middle border border-solid border-blueGray-100 py-3 text-xs uppercase border-l-0 border-r-0 whitespace-nowrap font-semibold text-left">
+                9.30-10.20
+                          </th>
+             <th class="px-6 bg-blueGray-50 text-blueGray-500 align-middle border border-solid border-blueGray-100 py-3 text-xs uppercase border-l-0 border-r-0 whitespace-nowrap font-semibold text-left">
+                            10.30-11.20
+              </th>
+            <th class="px-6 bg-blueGray-50 text-blueGray-500 align-middle border border-solid border-blueGray-100 py-3 text-xs uppercase border-l-0 border-r-0 whitespace-nowrap font-semibold text-left">
+                11.30-12.20
+                          </th>
+               <th class="px-6 bg-blueGray-50 text-blueGray-500 align-middle border border-solid border-blueGray-100 py-3 text-xs uppercase border-l-0 border-r-0 whitespace-nowrap font-semibold text-left">
+                12.30-13.20
+                          </th>
+            <th class="px-6 bg-blueGray-50 text-blueGray-500 align-middle border border-solid border-blueGray-100 py-3 text-xs uppercase border-l-0 border-r-0 whitespace-nowrap font-semibold text-left">
+                13.30-14.20
+                          </th>
+             <th class="px-6 bg-blueGray-50 text-blueGray-500 align-middle border border-solid border-blueGray-100 py-3 text-xs uppercase border-l-0 border-r-0 whitespace-nowrap font-semibold text-left">
+                14.30-15.20
+                          </th>
+                <th class="px-6 bg-blueGray-50 text-blueGray-500 align-middle border border-solid border-blueGray-100 py-3 text-xs uppercase border-l-0 border-r-0 whitespace-nowrap font-semibold text-left">
+                            15.30-16.20
+              </th>
+
+            </tr>
+          </thead>
+
+          <tbody>
+            <tr>
+              <th class="flex justify-center items-center bg-[#0ea5e9] px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4 text-left text-blueGray-700 ">
+                Monday
+              </th>
+                <td class="border-t-0 px-6 align-middle bg-[#0ea5e9] border-l-0 border-r-0 text-xs whitespace-nowrap p-4" *ngFor="let lesson of mondayLessons3">  {{ lesson ? lesson : 'free' }}</td>
+            </tr>
+            <tr>
+              <th class="flex justify-center items-center border-t-0 bg-[#38bdf8] px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4 text-left text-blueGray-700">
+                Tuesday
+              </th>
+              <td class="border-t-0 px-6 align-middle border-l-0 border-r-0 bg-[#38bdf8] text-xs whitespace-nowrap p-4" *ngFor="let lesson of tuesdayLessons3">  {{ lesson ? lesson : 'free' }}</td>
+            </tr>
+            <tr>
+              <th class="flex justify-center items-center bg-[#0ea5e9]  border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4 text-left text-blueGray-700">
+                Wednesday
+              </th>
+              <td class="border-t-0 px-6 align-middle bg-[#0ea5e9]  border-l-0 border-r-0 text-xs whitespace-nowrap p-4" *ngFor="let lesson of wednesdayLessons3">  {{ lesson ? lesson : 'free' }}</td>
+
+            </tr>
+            <tr>
+              <th class="flex justify-center items-center border-t-0 bg-[#38bdf8] px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4 text-left text-blueGray-700">
+                Thursday
+              </th>
+              <td class="border-t-0 px-6 align-middle border-l-0 border-r-0 bg-[#38bdf8] text-xs whitespace-nowrap p-4" *ngFor="let lesson of thursdayLessons3">  {{ lesson ? lesson : 'free' }}</td>
+            </tr>
+            <tr>
+              <th class="flex justify-center items-center bg-[#0ea5e9]  border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4 text-left text-blueGray-700">
+                Friday
+              </th>
+              <td class="border-t-0 px-6 align-middle border-l-0 bg-[#0ea5e9]  border-r-0 text-xs whitespace-nowrap p-4" *ngFor="let lesson of fridayLessons3">  {{ lesson ? lesson : 'free' }}</td>
+            </tr>
+          </tbody>
+
+        </table>
+      </div>
+    </div>
+  </div>
+  <div class="w-full  mb-12 xl:mb-0 px-4 mx-auto mt-24">
+    <div class="relative flex flex-col min-w-0 break-words bg-white w-full mb-6 shadow-lg rounded ">
+      <div class="rounded-t mb-0 px-4 py-3 border-0 bg-[#0ea5e9]">
+        <div  class="flex flex-wrap items-center">
+          <div class="relative w-full px-4 max-w-full flex-grow flex-1">
+            <h3 class="font-semibold text-base text-blueGray-700 flex justify-center items-center">Fourth Year</h3>
+          </div>
+
+        </div>
+      </div>
+
+      <div class="block w-full overflow-x-auto">
+        <table class="items-center bg-transparent w-full border-collapse ">
+          <thead class="bg-[#38bdf8]">
+            <tr>
+              <th class=" flex justify-center items-center px-6 bg-blueGray-50 text-blueGray-500 align-middle border border-solid border-blueGray-100 py-3 text-xs uppercase border-l-0 border-r-0 whitespace-nowrap font-semibold text-left">
+                      Lessons / Times    </th>
+            <th class="px-6 bg-blueGray-50 text-blueGray-500 align-middle border border-solid border-blueGray-100 py-3 text-xs uppercase border-l-0 border-r-0 whitespace-nowrap font-semibold text-left">
+                8.30-9.20
+
+                            </th>
+             <th class="px-6 bg-blueGray-50 text-blueGray-500 align-middle border border-solid border-blueGray-100 py-3 text-xs uppercase border-l-0 border-r-0 whitespace-nowrap font-semibold text-left">
+                9.30-10.20
+                          </th>
+             <th class="px-6 bg-blueGray-50 text-blueGray-500 align-middle border border-solid border-blueGray-100 py-3 text-xs uppercase border-l-0 border-r-0 whitespace-nowrap font-semibold text-left">
+                            10.30-11.20
+              </th>
+            <th class="px-6 bg-blueGray-50 text-blueGray-500 align-middle border border-solid border-blueGray-100 py-3 text-xs uppercase border-l-0 border-r-0 whitespace-nowrap font-semibold text-left">
+                11.30-12.20
+                          </th>
+               <th class="px-6 bg-blueGray-50 text-blueGray-500 align-middle border border-solid border-blueGray-100 py-3 text-xs uppercase border-l-0 border-r-0 whitespace-nowrap font-semibold text-left">
+                12.30-13.20
+                          </th>
+            <th class="px-6 bg-blueGray-50 text-blueGray-500 align-middle border border-solid border-blueGray-100 py-3 text-xs uppercase border-l-0 border-r-0 whitespace-nowrap font-semibold text-left">
+                13.30-14.20
+                          </th>
+             <th class="px-6 bg-blueGray-50 text-blueGray-500 align-middle border border-solid border-blueGray-100 py-3 text-xs uppercase border-l-0 border-r-0 whitespace-nowrap font-semibold text-left">
+                14.30-15.20
+                          </th>
+                <th class="px-6 bg-blueGray-50 text-blueGray-500 align-middle border border-solid border-blueGray-100 py-3 text-xs uppercase border-l-0 border-r-0 whitespace-nowrap font-semibold text-left">
+                            15.30-16.20
+              </th>
+
+            </tr>
+          </thead>
+
+          <tbody>
+            <tr>
+              <th class="flex justify-center items-center bg-[#0ea5e9] px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4 text-left text-blueGray-700 ">
+                Monday
+              </th>
+                <td class="border-t-0 px-6 align-middle bg-[#0ea5e9] border-l-0 border-r-0 text-xs whitespace-nowrap p-4" *ngFor="let lesson of mondayLessons4">  {{ lesson ? lesson : 'free' }}</td>
+            </tr>
+            <tr>
+              <th class="flex justify-center items-center border-t-0 bg-[#38bdf8] px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4 text-left text-blueGray-700">
+                Tuesday
+              </th>
+              <td class="border-t-0 px-6 align-middle border-l-0 border-r-0 bg-[#38bdf8] text-xs whitespace-nowrap p-4" *ngFor="let lesson of tuesdayLessons4">  {{ lesson ? lesson : 'free' }}</td>
+            </tr>
+            <tr>
+              <th class="flex justify-center items-center bg-[#0ea5e9]  border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4 text-left text-blueGray-700">
+                Wednesday
+              </th>
+              <td class="border-t-0 px-6 align-middle bg-[#0ea5e9]  border-l-0 border-r-0 text-xs whitespace-nowrap p-4" *ngFor="let lesson of wednesdayLessons4">  {{ lesson ? lesson : 'free' }}</td>
+
+            </tr>
+            <tr>
+              <th class="flex justify-center items-center border-t-0 bg-[#38bdf8] px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4 text-left text-blueGray-700">
+                Thursday
+              </th>
+              <td class="border-t-0 px-6 align-middle border-l-0 border-r-0 bg-[#38bdf8] text-xs whitespace-nowrap p-4" *ngFor="let lesson of thursdayLessons4">  {{ lesson ? lesson : 'free' }}</td>
+            </tr>
+            <tr>
+              <th class="flex justify-center items-center bg-[#0ea5e9]  border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4 text-left text-blueGray-700">
+                Friday
+              </th>
+              <td class="border-t-0 px-6 align-middle border-l-0 bg-[#0ea5e9]  border-r-0 text-xs whitespace-nowrap p-4" *ngFor="let lesson of fridayLessons4">  {{ lesson ? lesson : 'free' }}</td>
+            </tr>
+          </tbody>
+
+        </table>
+      </div>
+    </div>
+  </div>
+  </section>
